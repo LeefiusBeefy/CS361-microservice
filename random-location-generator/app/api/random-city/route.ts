@@ -58,6 +58,21 @@ async function getRandomCity(offset: number): Promise<any> {
   return response.data.data[0]; // Ensure this returns an object
 }
 
+
+type City = {
+  id: number;
+  type: string;
+  city: string;
+  country: string;
+  countryCode: string;
+  region: string;
+  latitude: number;
+  longitude: number;
+  population: number;
+};
+
+
+
 // API route handler for fetching a random city
 export async function GET() {
   try {
@@ -67,11 +82,21 @@ export async function GET() {
     const randomOffset = Math.floor(Math.random() * totalCount);
 
     
-    const city = await getRandomCity(randomOffset);
+    const cityData = await getRandomCity(randomOffset);
 
-    const { wikiDataId, regionWdId, regionCode, name, ...filteredCity } = city;
+    const city: City = {
+      id: cityData.id,
+      type: cityData.type,
+      city: cityData.city,
+      country: cityData.country,
+      countryCode: cityData.countryCode,
+      region: cityData.region,
+      latitude: cityData.latitude,
+      longitude: cityData.longitude,
+      population: cityData.population,
+    };
 
-    return NextResponse.json({ city: filteredCity });
+    return NextResponse.json({ city });
   } catch (error) {
     console.error("An error occurred:", error);
     return NextResponse.json(
