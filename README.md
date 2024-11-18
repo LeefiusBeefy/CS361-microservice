@@ -5,9 +5,9 @@ This microservice provides a random city.
 ## How to Request Data
 
 To programmatically request data, make an HTTP GET request to:
-
-/api/random-city
-
+```
+https://cs-361-microservice.vercel.app/api/random-city
+```
 Example Request:
 ```
 import fetch from "node-fetch";
