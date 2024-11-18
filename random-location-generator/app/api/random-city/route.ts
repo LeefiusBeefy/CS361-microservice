@@ -45,6 +45,7 @@ async function getTotalCityCount(): Promise<number> {
 }
 
 // Function to get a city by random offset
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function getRandomCity(offset: number): Promise<any> {
   const response = await axios.get(GEO_API_URL, {
     headers: GEO_API_HEADERS,
