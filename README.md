@@ -1,6 +1,6 @@
 # Random City Microservice
 
-This microservice provides a random city using data from the GeoDB Cities API.
+This microservice provides a random city.
 
 ## How to Request Data
 
