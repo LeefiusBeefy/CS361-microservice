@@ -45,22 +45,4 @@ Example Response:
   }
 }
 UML Sequence Diagram
-Below is a UML sequence diagram illustrating the interaction:
-
-+-------------+        +---------------------+        +-------------------+
-| Application |        | Random City Service|        |    Cities API    |
-+-------------+        +---------------------+        +-------------------+
-       |                           |                                    |
-       | GET /api/random-city      |                                    |
-       |-------------------------->|                                    |
-       |                           |        GET totalCount              |
-       |                           |----------------------------------->|
-       |                           |        Respond with totalCount     |
-       |                           |<-----------------------------------|
-       |                           |        GET city by offset          |
-       |                           |----------------------------------->|
-       |                           |        Respond with city details   |
-       |                           |<-----------------------------------|
-       | Respond with random city details                               |
-       |<--------------------------|                                    |
-       |                           |                                    |
+![image](https://github.com/user-attachments/assets/d03ad803-cf1d-4dd1-a2e2-969c5d5ffcd3)
